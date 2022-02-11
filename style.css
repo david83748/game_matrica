@@ -6,28 +6,34 @@ body {
   display: flex;
 }
 
-div {
+/* div {
   width: 250px;
   height: 40px;
-}
+} */
 
 .person {
   background-color: red;
   border: 0.5px solid black;
+  width: 50px;
+  height: 45px;
 }
 
 .path {
   background-color: gray;
   border: 0.5px solid black;
+  width: 50px;
+  height: 45px;
 }
 
 .tree {
   background-color: green;
   border: 0.5px solid black;
+  width: 50px;
+  height: 45px;
 }
 
 .controls {
-  margin-left: 37%;
+  /* margin-left: %; */
 }
 
 .button__a {
@@ -41,8 +47,8 @@ div {
 }
 
 .button {
-  width: 60px;
-  height: 40px;
+  width: 100px;
+  height: 70px;
 }
 
 #wrapper {
