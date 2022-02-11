@@ -34,7 +34,7 @@ function render(cells) {
 document.getElementById('wrapper').innerHTML = render(array);
 
 document.addEventListener('keyup', (event) => {
-  if (event.key === 'ArrowRight') {
+  if (event.key === 'ArrowRigh') {
     const countColumns = array[0].length;
     if (array[currentStateRow][currentStateColumn + 1] !== 1) {
       if (currentStateColumn < countColumns - 1) {
@@ -73,3 +73,50 @@ document.addEventListener('keyup', (event) => {
     }
   }
 });
+
+function moveRight() {
+  const countColumns = array[0].length;
+  if (array[currentStateRow][currentStateColumn + 1] !== 1) {
+    if (currentStateColumn < countColumns - 1) {
+      array[currentStateRow][currentStateColumn] = 0;
+      array[currentStateRow][currentStateColumn + 1] = 3;
+      document.getElementById('wrapper').innerHTML = render(array);
+    }
+  }
+}
+
+function moveLeft() {
+  if (array[currentStateRow][currentStateColumn - 1] !== 1) {
+    if (currentStateColumn > 0) {
+      array[currentStateRow][currentStateColumn] = 0;
+      array[currentStateRow][currentStateColumn - 1] = 3;
+      document.getElementById('wrapper').innerHTML = render(array);
+    }
+  }
+}
+
+function moveDown() {
+  const countRows = array.length;
+  if (array[currentStateRow + 1][currentStateColumn] !== 1) {
+    if (currentStateRow < countRows - 1) {
+      array[currentStateRow][currentStateColumn] = 0;
+      array[currentStateRow + 1][currentStateColumn] = 3;
+      document.getElementById('wrapper').innerHTML = render(array);
+    }
+  }
+}
+
+function moveUp() {
+  if (array[currentStateRow - 1][currentStateColumn] !== 1) {
+    if (currentStateRow > 0) {
+      array[currentStateRow][currentStateColumn] = 0;
+      array[currentStateRow - 1][currentStateColumn] = 3;
+      document.getElementById('wrapper').innerHTML = render(array);
+    }
+  }
+}
+
+document.getElementById('buttonD').addEventListener('click', moveRight);
+document.getElementById('buttonA').addEventListener('click', moveLeft);
+document.getElementById('buttonS').addEventListener('click', moveDown);
+document.getElementById('buttonW').addEventListener('click', moveUp);
