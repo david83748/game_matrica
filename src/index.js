@@ -34,7 +34,7 @@ function render(cells) {
 document.getElementById('wrapper').innerHTML = render(array);
 
 document.addEventListener('keyup', (event) => {
-  if (event.key === 'ArrowRigh') {
+  if (event.key === 'ArrowRight') {
     const countColumns = array[0].length;
     if (array[currentStateRow][currentStateColumn + 1] !== 1) {
       if (currentStateColumn < countColumns - 1) {
